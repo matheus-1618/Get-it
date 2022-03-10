@@ -1,0 +1,341 @@
+/*
+Algumas informações úteis e dicas:
+  - Fontes disponíveis:
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+  - Cores:
+    Tons de amarelo:
+      #e4fc2b
+      #e0d426
+      #f7d736
+      #e0af26
+      #fcb02b
+    Tons de cinza:
+      #2c2c2c
+      #4c4c4c
+    Cores dos cards:
+      #ead3a7
+      #9de0f5
+      #ef89ba
+      #fae890
+      #abe9c1
+  - Sombra: https://codepen.io/sdthornton/pen/wBZdXq
+ */
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  
+}
+
+/* Você pode usar o CSS comentado abaixo, se ajudar */
+/* Fonte: https://codepen.io/CrisWoler/pen/ogXBLj */
+.btn {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  
+  font-family:Blippo, fantasy;
+  font-size: 1.2rem;
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.3);
+  color: black;
+  background-color: #f7d736;
+
+  transition: background-color 0.2s;
+}
+
+.btn > * {
+  position: relative;
+}
+
+.btn:before {
+  content: "";
+
+  position: relative;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(236, 240, 241, 0.3);
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+  width: 0.5%;
+  padding-top: 0.5%;
+  transition: width 0.2s ease-out, padding-top 0.2s ease-out;
+}
+
+.modal-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+}
+
+.appbar{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0.8rem;
+    background-color: #f7d736;
+    box-shadow: 5px 5px 20px 2px rgba(0, 0, 0, 0.5);
+
+}
+
+.logo {
+  width: 5%;
+}
+
+.subtitle {
+  font-size:130%;
+  font-family:Stencil Std, fantasy;
+  margin-left: 1rem;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  margin-top:50px;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  border: 10px yellow;
+  
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  padding:10px;
+  box-shadow: 5px 5px 20px 2px rgba(0, 0, 0, 0.5);
+}
+
+.form-card-title{
+  font-size: 2rem;
+  margin-top: 10px;
+  font-family:Arial, Helvetica, sans-serif;
+  outline:0;
+  border:0;
+  transition: .3s box-shadow;
+}
+
+.form-card-title-extra{
+  font-size: 2rem;
+  margin-top: 10px;
+  font-family: 'Permanent Marker', cursive;
+  outline:0;
+  border:0;
+  transition: .3s box-shadow;
+}
+
+.autoresize{
+  font-size: 1rem;
+  margin-top: 10px;
+  font-family:Arial, Helvetica, sans-serif;
+  border:0;
+  outline:0;
+  resize: none;
+  transition: .3s box-shadow;
+}
+
+.autoresize-extra{
+  font-size: 1rem;
+  margin-top: 10px;
+  width: 100%;
+  font-family: 'Permanent Marker', cursive;
+  border:0;
+  outline:0;
+  resize: none;
+  transition: .3s box-shadow;
+}
+
+.card-container{
+  position: relative;
+  display: flex;
+  width: 130%;
+  margin: 20px;
+  padding: 5px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  align-items:center;
+  flex-grow: 1;
+}
+
+
+.card{
+  display: flex;
+  border-radius: 5px;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width:18rem;
+  height:9.5rem;
+  padding:10px;
+  margin:12px;
+  box-shadow: 0 1px 10px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.5s;
+  
+}
+
+.card:hover {
+  transform: scale(1.1) translateY(-5px);
+  cursor: pointer;
+}
+
+.card-title{
+  font-size: 1.3rem;
+  font-weight: 1000;
+  height: 150%;
+  font-family: 'Permanent Marker', cursive;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+
+.card-content{
+  margin-bottom: 5px;
+  color: #343434;
+  display: flex;
+  font-size: 1.1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Permanent Marker', cursive;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  hyphens: auto;
+}
+
+.buttons{
+  display: flex;
+  margin: 20px;
+  padding: 5px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  outline: none;
+  border:none;
+}
+
+.button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow:visible;
+}
+
+.button:focus{
+  outline: none;
+}
+
+.trash{
+  display: flex;
+}
+
+.trash:hover{
+  display: flex;
+  color:red;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.update{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.update:hover{
+  display: flex;
+  color:blue;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.card-color-1{
+  background-color: #ead3a7 ;
+}
+
+.card-color-2{
+  background-color: #9de0f5 ;
+}
+
+.card-color-3{
+  background-color: #ef89ba ;
+}
+
+.card-color-4{
+  background-color: #fae890 ;
+}
+
+
+.card-color-5{
+  background-color: #abe9c1 ;
+}
+
+.card-rotation-1{
+  transform: rotate(-4deg);
+}
+
+.card-rotation-2{
+  transform: rotate(2deg);
+}
+
+.card-rotation-3{
+  transform: rotate(-1deg);
+}
+
+.card-rotation-4{
+  transform: rotate(0deg);
+}
+
+.card-rotation-5{
+  transform: rotate(-2deg);
+}
+
+.card-rotation-6{
+  transform: rotate(6deg);
+}
+
+.card-rotation-7{
+  transform: rotate(-7deg);
+}
+
+.card-rotation-8{
+  transform: rotate(2deg);
+}
+
+.card-rotation-9{
+  transform: rotate(-4deg);
+}
+
+.card-rotation-10{
+  transform: rotate(5deg);
+}
+
+.card-rotation-11{
+  transform: rotate(-6deg);
+}
+
